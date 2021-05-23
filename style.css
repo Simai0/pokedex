@@ -1,0 +1,35 @@
+.border-top {
+    border-top: 3.5px solid var(--main-buttons-color);
+    position: absolute;
+    top: -3px;
+    left: 20px;
+    right: 19.5px;
+  }
+  .border-bottom {
+    border-top: 3.5px solid var(--main-buttons-color);
+    position: absolute;
+    top: 11px;
+    left: 20px;
+    right: 19.5px;
+  }
+  #right-panel {
+    background-color: var(--main-bg-color);
+    box-sizing: border-box;
+    position: relative;
+    height: 100%;
+    width: 50%;
+    display: grid;
+    grid-template-rows: 24% repeat(4, 19%);
+    border-bottom: solid black 3px;
+    border-bottom-right-radius: 10px;
+  }
+  #right-panel::before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    bottom: 0;
+    width: 100%;
+    height: 265px;
+    border-right: solid black 3px;
+    border-bottom-right-radius: 7px;
+  }
