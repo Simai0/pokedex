@@ -5,148 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pokedex</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <style>
-        #a {
-            border: 1px solid black;
-            border-bottom: 2px solid black;
-            text-align: center;
-        }
-
-        #main {
-            transform: translateY(50%);
-        }
-
-        #nev {
-            /*border: 1px solid green;*/
-            margin-top: 50px;
-        }
-
-        img {
-            /*border: 1px solid blue;*/
-            width: 180px;
-            height: 180px;
-        }
-
-        #teljes {
-            width: 300px;
-            height: 250px;
-            /*border: 1px solid black;*/
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #valtas {
-            /*border: 1px solid blue;*/
-            height: 125px;
-            width: 50px;
-            transition: 100ms ease;
-        }
-
-        #valtas:hover {
-            transform: scaleY(1.25);
-        }
-
-        #balstat {
-            height: 20px;
-            /*border: 1px solid blue;*/
-            float: left;
-            width: 150px;
-            height: 150px;
-            margin-left: -10px;
-            margin-top: 35px;
-        }
-
-        #jobbstat {
-            height: 20px;
-            /*border: 1px solid blue;*/
-            float: right;
-            width: 150px;
-            height: 150px;
-            margin-right: -10px;
-            margin-top: 35px;
-        }
-
-        #statblock {
-            height: 20px;
-            width: 150px;
-            font-size: 12px;
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        #statblock #total {
-            margin-top: 8px;
-            font-size: 15px;
-        }
-
-        #balstat #statblock #statbarcorner {
-            border: 1px solid black;
-            height: 20px;
-            width: 125px;
-            margin-top: 5px;
-            float: left;
-        }
-
-        #jobbstat #statblock #statbarcorner {
-            border: 1px solid black;
-            height: 20px;
-            width: 125px;
-            margin-top: 5px;
-            float: right;
-            margin-right: 2px;
-        }
-
-        #balstat #statblock #statbar {
-            background-color: black;
-            width: 12px;
-            height: 19px;
-            margin-top: -1px;
-            margin-left: -1px;
-            float: left;
-        }
-
-        #jobbstat #statblock #statbar {
-            background-color: black;
-            width: 12px;
-            height: 19px;
-            margin-top: -1px;
-            margin-right: -1px;
-            float: right;
-        }
-
-        #balstat #statblock #szam {
-            margin-left: -10px;
-        }
-
-        #jobbstat #statblock #szam {
-            margin-right: -5px;
-        }
-
-        #statnevek {
-            margin-top: 57px;
-            line-height: 9px;
-        }
-
-        .fight {
-            margin-top: 30px;
-        }
-
-        .gyoztes {
-            color: green;
-        }
-
-        .vesztes {
-            color: red;
-        }
-
-        .dontetlen {
-            color: orange;
-        }
-    </style>
 </head>
 
 <body>
@@ -165,7 +27,7 @@
                 <div class="row row-cols-3">
                     <div class="col" id="a">
                         <div class="fight">
-                            <h2 id="p1">1</h2>
+                            <h2 id="p1"><br></h2>
                         </div>
                         <div id="balstat">
                             <div id="statblock">
@@ -197,7 +59,7 @@
                     </div>
                     <div class="col" id="a">
                         <div class="fight">
-                            <h2 id="counter">asd</h2>
+                            <h2 id="csata"><br></h2>
                         </div>
                         <div id="statnevek">
                             <p>HP</p>
@@ -209,7 +71,7 @@
                     </div>
                     <div class="col" id="a">
                         <div class="fight">
-                            <h2 id="p2">1</h2>
+                            <h2 id="p2"><br></h2>
                         </div>
                         <div id="jobbstat">
                             <div id="statblock">
@@ -258,131 +120,7 @@
         </div>
     </div>
 
-    <script>
-        var tomb = [[
-            "Pikachu",
-            "pika.png",
-            35,
-            55,
-            40,
-            90
-        ], [
-            "Bulbasaur",
-            "bulbagenyo.png",
-            45,
-            49,
-            49,
-            45
-        ], [
-            "Charmander",
-            "charmander.jpg",
-            10,
-            52,
-            54,
-            75
-        ]];
-
-        var szamlalok1 = 0;
-        var szamlalok2 = 0;
-        var nev1 = document.getElementById("nev1");
-        var nev2 = document.getElementById("nev2");
-        var kep1 = document.getElementById("kep1");
-        var kep2 = document.getElementById("kep2");
-        var counter = document.getElementById("counter");
-        var szamok = document.querySelectorAll("#szam");
-
-        var p1 = document.getElementById("p1");
-        var p2 = document.getElementById("p2");
-
-        var stats = document.querySelectorAll("#statbar");
-        var osszesen = document.querySelectorAll("#total #szam");
-        console.log(osszesen);
-
-        function reset() {
-            if (szamlalok1 < 0)
-                szamlalok1 = tomb.length - 1;
-            else if (szamlalok1 >= tomb.length)
-                szamlalok1 = 0;
-            if (szamlalok2 < 0)
-                szamlalok2 = tomb.length - 1;
-            else if (szamlalok2 >= tomb.length)
-                szamlalok2 = 0;
-        }
-
-        function valtas() {
-            reset();
-            var c1 = tomb[szamlalok1];
-            var c2 = tomb[szamlalok2];
-            nev1.innerHTML = c1[0];
-            nev2.innerHTML = c2[0];
-            kep1.src = "kepek/" + c1[1];
-            kep2.src = "kepek/" + c2[1];
-            for (let i = 0; i < 4; i++) {
-                szamok[i].innerHTML = c1[2 + i];
-                szamok[4 + i].innerHTML = c2[2 + i];
-                stats[i].style.width = c1[2 + i] + 20 + "px";
-                stats[4 + i].style.width = c2[2 + i] + 20 + "px";
-            }
-            osszesen[0].innerHTML = c1[2] + c1[3] + c1[4] + c1[5];
-            osszesen[1].innerHTML = c2[2] + c2[3] + c2[4] + c2[5];
-        }
-
-        function j1() {
-            szamlalok1++;
-            valtas();
-        }
-
-        function b1() {
-            szamlalok1--;
-            valtas();
-        }
-
-        function j2() {
-            szamlalok2++;
-            valtas();
-        }
-
-        function b2() {
-            szamlalok2--;
-            valtas();
-        }
-
-        function fight() {
-            var o1 = parseInt(osszesen[0].innerHTML);
-            var o2 = parseInt(osszesen[1].innerHTML);
-
-            counter.innerHTML = "Harc!";
-
-            if(o1 > o2) {
-                p1.innerHTML = "Győztes";
-                p1.className = "gyoztes";
-
-                counter.innerHTML = ">";
-
-                p2.innerHTML = "Vesztes";
-                p2.className = "vesztes";
-            } else if (o1 < o2) {
-                p2.innerHTML = "Győztes";
-                p2.className = "gyoztes";
-
-                counter.innerHTML = "<";
-
-                p1.innerHTML = "Vesztes";
-                p1.className = "vesztes";
-            } else {
-                p2.innerHTML = "Döntetlen";
-                p2.className = "dontetlen";
-
-                counter.innerHTML = "=";
-
-                p1.innerHTML = "Döntetlen";
-                p1.className = "dontetlen";
-            }
-        }
-
-        valtas();
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

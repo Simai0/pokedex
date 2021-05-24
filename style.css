@@ -1,35 +1,136 @@
-.border-top {
-    border-top: 3.5px solid var(--main-buttons-color);
-    position: absolute;
-    top: -3px;
-    left: 20px;
-    right: 19.5px;
-  }
-  .border-bottom {
-    border-top: 3.5px solid var(--main-buttons-color);
-    position: absolute;
-    top: 11px;
-    left: 20px;
-    right: 19.5px;
-  }
-  #right-panel {
-    background-color: var(--main-bg-color);
-    box-sizing: border-box;
-    position: relative;
-    height: 100%;
-    width: 50%;
-    display: grid;
-    grid-template-rows: 24% repeat(4, 19%);
-    border-bottom: solid black 3px;
-    border-bottom-right-radius: 10px;
-  }
-  #right-panel::before {
-    content: '';
-    position: absolute;
-    left: -3px;
-    bottom: 0;
-    width: 100%;
-    height: 265px;
-    border-right: solid black 3px;
-    border-bottom-right-radius: 7px;
-  }
+#a {
+  border: 1px solid black;
+  border-bottom: 2px solid black;
+  text-align: center;
+}
+
+#main {
+  transform: translateY(50%);
+}
+
+#nev {
+  /*border: 1px solid green;*/
+  margin-top: 50px;
+}
+
+img {
+  /*border: 1px solid blue;*/
+  width: 180px;
+  height: 180px;
+}
+
+#teljes {
+  width: 300px;
+  height: 250px;
+  /*border: 1px solid black;*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#valtas {
+  /*border: 1px solid blue;*/
+  height: 125px;
+  width: 50px;
+  transition: 100ms ease;
+}
+
+#valtas:hover {
+  transform: scaleY(1.25);
+}
+
+#balstat {
+  height: 20px;
+  /*border: 1px solid blue;*/
+  float: left;
+  width: 150px;
+  height: 150px;
+  margin-left: -10px;
+  margin-top: 35px;
+}
+
+#jobbstat {
+  height: 20px;
+  /*border: 1px solid blue;*/
+  float: right;
+  width: 150px;
+  height: 150px;
+  margin-right: -10px;
+  margin-top: 35px;
+}
+
+#statblock {
+  height: 20px;
+  width: 150px;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#statblock #total {
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+#balstat #statblock #statbarcorner {
+  border: 1px solid black;
+  height: 20px;
+  width: 125px;
+  margin-top: 5px;
+  float: left;
+}
+
+#jobbstat #statblock #statbarcorner {
+  border: 1px solid black;
+  height: 20px;
+  width: 125px;
+  margin-top: 5px;
+  float: right;
+  margin-right: 2px;
+}
+
+#balstat #statblock #statbar {
+  background-color: black;
+  width: 12px;
+  height: 19px;
+  margin-top: -1px;
+  margin-left: -1px;
+  float: left;
+}
+
+#jobbstat #statblock #statbar {
+  background-color: black;
+  width: 12px;
+  height: 19px;
+  margin-top: -1px;
+  margin-right: -1px;
+  float: right;
+}
+
+#balstat #statblock #szam {
+  margin-left: -10px;
+}
+
+#jobbstat #statblock #szam {
+  margin-right: -5px;
+}
+
+#statnevek {
+  margin-top: 57px;
+  line-height: 9px;
+}
+
+.fight {
+  margin-top: 30px;
+}
+
+.gyoztes {
+  color: green;
+}
+
+.vesztes {
+  color: red;
+}
+
+.dontetlen {
+  color: orange;
+}
