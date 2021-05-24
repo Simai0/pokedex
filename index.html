@@ -11,23 +11,36 @@
     <link rel="stylesheet" href="style.css">
     <style>
         #a {
-            border: 1px solid red;
+            border: 1px solid black;
+            border-bottom: 2px solid black;
             text-align: center;
         }
 
+        #main {
+            transform: translateY(50%);
+        }
+
         #nev {
-            border: 1px solid green;
+            /*border: 1px solid green;*/
             margin-top: 50px;
         }
 
         img {
-            border: 1px solid blue;
+            /*border: 1px solid blue;*/
             width: 180px;
             height: 180px;
         }
 
+        #teljes {
+            width: 300px;
+            height: 250px;
+            /*border: 1px solid black;*/
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         #valtas {
-            border: 1px solid blue;
+            /*border: 1px solid blue;*/
             height: 125px;
             width: 50px;
             transition: 100ms ease;
@@ -39,22 +52,22 @@
 
         #balstat {
             height: 20px;
-            border: 1px solid blue;
+            /*border: 1px solid blue;*/
             float: left;
             width: 150px;
             height: 150px;
             margin-left: -10px;
-            margin-top: 105px;
+            margin-top: 35px;
         }
 
         #jobbstat {
             height: 20px;
-            border: 1px solid blue;
+            /*border: 1px solid blue;*/
             float: right;
             width: 150px;
             height: 150px;
             margin-right: -10px;
-            margin-top: 105px;
+            margin-top: 35px;
         }
 
         #statblock {
@@ -63,6 +76,11 @@
             font-size: 12px;
             margin-top: 5px;
             margin-bottom: 5px;
+        }
+
+        #statblock #total {
+            margin-top: 8px;
+            font-size: 15px;
         }
 
         #balstat #statblock #statbarcorner {
@@ -86,6 +104,7 @@
             background-color: black;
             width: 12px;
             height: 19px;
+            margin-top: -1px;
             margin-left: -1px;
             float: left;
         }
@@ -94,6 +113,7 @@
             background-color: black;
             width: 12px;
             height: 19px;
+            margin-top: -1px;
             margin-right: -1px;
             float: right;
         }
@@ -107,25 +127,46 @@
         }
 
         #statnevek {
-            margin-top: 117px;
-            line-height: 10px;
+            margin-top: 57px;
+            line-height: 9px;
+        }
+
+        .fight {
+            margin-top: 30px;
+        }
+
+        .gyoztes {
+            color: green;
+        }
+
+        .vesztes {
+            color: red;
+        }
+
+        .dontetlen {
+            color: orange;
         }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row">
+    <div class="container-fluid" id="main">
+        <div class="row row-cols-3">
             <div class="col" id="a">
-                <h2 id="nev1">Pikachu</h2>
-                <button id="valtas" onclick="b1()">
-                    <</button>
-                        <img id="kep1" src="kepek/pika.png" alt="pikachu">
-                        <button id="valtas" onclick="j1()">></button>
+                <div id="teljes">
+                    <h2 id="nev1">Pikachu</h2>
+                    <button id="valtas" class="btn btn-dark" onclick="b1()">
+                        <</button>
+                            <img id="kep1" src="kepek/pika.png" alt="pikachu">
+                            <button id="valtas" class="btn btn-dark" onclick="j1()">></button>
+                </div>
             </div>
-            <div class="col-5" id="a">
-                <div class="row">
+            <div class="col-4" id="a">
+                <div class="row row-cols-3">
                     <div class="col" id="a">
+                        <div class="fight">
+                            <h2 id="p1">1</h2>
+                        </div>
                         <div id="balstat">
                             <div id="statblock">
                                 <div id="statbarcorner">
@@ -147,17 +188,29 @@
                                     <div id="statbar"></div>
                                 </div><a id="szam">90</a>
                             </div>
+                            <div id="statblock">
+                                <div id="total">
+                                    <a id="szam">90</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col" id="a">
+                        <div class="fight">
+                            <h2 id="counter">asd</h2>
+                        </div>
                         <div id="statnevek">
                             <p>HP</p>
                             <p>Támadás</p>
                             <p>Védekezés</p>
                             <p>Sebesség</p>
+                            <p>Összesen</p>
                         </div>
                     </div>
                     <div class="col" id="a">
+                        <div class="fight">
+                            <h2 id="p2">1</h2>
+                        </div>
                         <div id="jobbstat">
                             <div id="statblock">
                                 <div id="statbarcorner">
@@ -179,21 +232,28 @@
                                     <div id="statbar"></div>
                                 </div><a id="szam">90</a>
                             </div>
+                            <div id="statblock">
+                                <div id="total">
+                                    <a id="szam">90</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col" id="a">
+                <div id="teljes">
                 <h2 id="nev2">Pikachu</h2>
-                <button id="valtas" onclick="b2()">
+                <button id="valtas" class="btn btn-dark" onclick="b2()">
                     <</button>
                         <img id="kep2" src="kepek/pika.png" alt="pikachu">
-                        <button id="valtas" onclick="j2()">></button>
+                        <button id="valtas" class="btn btn-dark" onclick="j2()">></button>
+                    </div>
             </div>
         </div>
         <div class="row">
             <div class="col" id="a">
-             <button onclick="fight()">Fight</button>
+             <button onclick="fight()" class="btn btn-primary" style="margin: 10px; width: 100px;">Csata</button>
             </div>
         </div>
     </div>
@@ -228,16 +288,23 @@
         var nev2 = document.getElementById("nev2");
         var kep1 = document.getElementById("kep1");
         var kep2 = document.getElementById("kep2");
-        //var bals = document.getElementById("balstat").children;
+        var counter = document.getElementById("counter");
         var szamok = document.querySelectorAll("#szam");
+
+        var p1 = document.getElementById("p1");
+        var p2 = document.getElementById("p2");
+
+        var stats = document.querySelectorAll("#statbar");
+        var osszesen = document.querySelectorAll("#total #szam");
+        console.log(osszesen);
 
         function reset() {
             if (szamlalok1 < 0)
-                szamlalok1 = tomb.length;
+                szamlalok1 = tomb.length - 1;
             else if (szamlalok1 >= tomb.length)
                 szamlalok1 = 0;
             if (szamlalok2 < 0)
-                szamlalok2 = tomb.length;
+                szamlalok2 = tomb.length - 1;
             else if (szamlalok2 >= tomb.length)
                 szamlalok2 = 0;
         }
@@ -246,7 +313,6 @@
             reset();
             var c1 = tomb[szamlalok1];
             var c2 = tomb[szamlalok2];
-            //var c2 = tomb[szamlalok2];
             nev1.innerHTML = c1[0];
             nev2.innerHTML = c2[0];
             kep1.src = "kepek/" + c1[1];
@@ -254,7 +320,11 @@
             for (let i = 0; i < 4; i++) {
                 szamok[i].innerHTML = c1[2 + i];
                 szamok[4 + i].innerHTML = c2[2 + i];
+                stats[i].style.width = c1[2 + i] + 20 + "px";
+                stats[4 + i].style.width = c2[2 + i] + 20 + "px";
             }
+            osszesen[0].innerHTML = c1[2] + c1[3] + c1[4] + c1[5];
+            osszesen[1].innerHTML = c2[2] + c2[3] + c2[4] + c2[5];
         }
 
         function j1() {
@@ -278,8 +348,39 @@
         }
 
         function fight() {
+            var o1 = parseInt(osszesen[0].innerHTML);
+            var o2 = parseInt(osszesen[1].innerHTML);
 
+            counter.innerHTML = "Harc!";
+
+            if(o1 > o2) {
+                p1.innerHTML = "Győztes";
+                p1.className = "gyoztes";
+
+                counter.innerHTML = ">";
+
+                p2.innerHTML = "Vesztes";
+                p2.className = "vesztes";
+            } else if (o1 < o2) {
+                p2.innerHTML = "Győztes";
+                p2.className = "gyoztes";
+
+                counter.innerHTML = "<";
+
+                p1.innerHTML = "Vesztes";
+                p1.className = "vesztes";
+            } else {
+                p2.innerHTML = "Döntetlen";
+                p2.className = "dontetlen";
+
+                counter.innerHTML = "=";
+
+                p1.innerHTML = "Döntetlen";
+                p1.className = "dontetlen";
+            }
         }
+
+        valtas();
 
     </script>
 </body>
